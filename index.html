@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-HANDSON-8</title>
+</head>
+<body>
+    <h1>JS-HANDSON-8</h1>
+    <p >
+        "let studentRecords = [ {name: 'John', id: 123, marks : 98 },
+          {name: 'Baba', id: 101, marks : 23 },
+          {name: 'yaga', id: 200, marks : 45 },
+          {name: 'Wick', id: 115, marks : 75 } ] "
+    </p>
+    <h3>Question 1 : We are interested in retrieving only the name of the students and all the names should be in caps.
+        ['JOHN', 'BABA', 'YAGA', 'WICK']
+</h3>
+<pre>
+    const a = studentRecords.map(item => item.name.toUpperCase())
+ console.log(a);
+</pre>
+<h3>Question 2: Suppose we have the same dataset as above but this time we want to get the details of students who scored more than 50 marks. <br> [{name: 'John', id: 123, marks : 98 },{name: 'Wick', id: 115, marks : 75 }]</h3>
+<pre>
+    const b = studentRecords.filter(item => item.marks>50);
+ console.log(b);
+
+</pre>
+<h3>Question 3: Retrieve the details of students who scored more than 50 marks and have id greater than 120.</h3>
+<pre>
+    Answer: const c= studentRecords.filter(item=>item.marks>50 && item.id>120);
+    console.log(c);
+   
+
+</pre>
+<h3>Question 4: Consider the same scenario we have discussed above, but this time we would like to know the sum total of the marks of the students.
+</h3>
+<pre>Answer: const arr1=[]
+    for(var i=0;i< studentRecords.length;i++){
+       arr1.push(studentRecords[i].marks)
+    }
+    console.log(arr1);
+    sum=0
+    for(let i=0;i< arr1.length;i++){
+       sum+=arr1[i]
+    }
+    console.log(sum);
+    </pre>
+    <h3>Question 5: This time we want to get only the names of the students who scored more than 50 marks from the same dataset used above.</h3>
+    <pre>Answer: for(let i=0;i< studentRecords.length;i++){
+        if(studentRecords[i].marks>50){
+            console.log(studentRecords[i].name);
+        }
+    }</pre>
+        <h3>Question 6: This time we are required to print the sum of marks of the students with id > 120.
+        </h3>
+        <pre>Answer:const d=studentRecords.filter(item=>item.id>120)
+            console.log(d);
+            SUM=0
+            for(let i=0;i< d.length;i++){
+                SUM+=d[i].marks
+            }
+            console.log(SUM);
+            </pre>
+            <h3>Question 7: This time we are required to print the total marks of the students with marks greater than 50 after a grace of 15 marks has been added to those students who scored less than 50.</h3>
+            
+            <pre>var u=studentRecords.filter((item)=>item.marks>50)
+                var u1=u.map((item)=>item.marks)
+                var u2=u1.reduce((x,y)=>x+y,0)
+                console.log(u2);</pre>
+
+    <script src="./main.js"></script>
+</body>
+</html>
